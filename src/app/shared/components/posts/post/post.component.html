@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="post-header">
+    <div class="post-header-left">
+      <img
+        src="https://www.segalization.com/wp-content/uploads/2016/05/Valkyria-Chronicles-Avatar-Selvaria.jpg"
+        alt=""
+      />
+      <div class="post-header-info">
+        <div class="post-header-info-name">{{ post.user?.username }}</div>
+        <div class="post-header-info-date">{{ post.created_at | date }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-content">{{ post.content }}</div>
+</div>

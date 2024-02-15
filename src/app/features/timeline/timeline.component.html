@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="side-column"></div>
+  <div class="main-column">
+    @for (post of posts; track post.id){
+    <app-post [post]="post" />
+    }
+  </div>
+  <div class="side-column"></div>
+</div>

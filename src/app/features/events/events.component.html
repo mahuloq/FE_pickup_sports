@@ -1,0 +1,16 @@
+<div class="events-list-container">
+  @for (event of events; track event.id){
+  <app-event [event]="event" />
+  }
+</div>
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">
+    Previous
+  </button>
+  <button
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages || totalPages === 0"
+  >
+    Next
+  </button>
+</div>

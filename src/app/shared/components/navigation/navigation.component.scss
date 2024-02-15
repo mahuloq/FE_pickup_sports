@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #add8e6;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.navbar .brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+.navbar .nav-links a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+  color: white;
+  background-color: #ffa500;
+  border-radius: 4px;
+}
