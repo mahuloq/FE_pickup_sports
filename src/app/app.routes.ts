@@ -16,4 +16,11 @@ export const routes: Routes = [
         (c) => c.EventsComponent
       ),
   },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/auth/login/login.component').then(
+        (c) => c.LoginComponent
+      ),
+  },
 ];
