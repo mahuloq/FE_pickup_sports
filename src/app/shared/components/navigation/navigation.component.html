@@ -1,12 +1,23 @@
-<div class="navbar">
+<nav class="navbar">
   <div class="brand-name">Pickup Sports</div>
   <div class="nav-links">
-    <a
-      routerLink=""
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Timeline</a
-    >
-    <a routerLink="/events" routerLinkActive="active">Events</a>
+    @if (isLoggedIn()){
+    <a (click)="logout()">Logout</a>
+    <div class="menu-container" [class.active]="isSidebarVisible">
+      <button class="menu" (click)="toggleSidebar()">☰</button>
+    </div>
+    } @else {
+    <a routerLink="/login">Login</a>
+    }
   </div>
+</nav>
+
+<div class="sidebar" [class.active]="isSidebarVisible">
+  <a
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Timeline</a
+  >
+  <a routerLink="/events" routerLinkActive="active">Events</a>
 </div>
