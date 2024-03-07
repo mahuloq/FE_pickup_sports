@@ -1,5 +1,4 @@
 export const environment = {
   production: true,
-  // TODO
-  apiURL: 'http://www.production.com',
+  apiURL: 'https://pickupsportsapi-am48.onrender.com',
 };
