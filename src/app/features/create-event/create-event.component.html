@@ -1,0 +1,38 @@
+<div class="form-container">
+  <form [formGroup]="eventForm" (ngSubmit)="onCreateEvent()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" formControlName="title" />
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <input type="text" formControlName="content" />
+    </div>
+    <div class="form-group">
+      <label for="guests">Guests</label>
+      <input type="number" formControlName="guests" />
+    </div>
+    <div class="form-group">
+      <label for="start_date_time">Start Date Time</label>
+      <input type="datetime-local" formControlName="start_date_time" />
+    </div>
+    <div class="form-group">
+      <label for="end_date_time">End Date Time</label>
+      <input type="datetime-local" formControlName="end_date_time" />
+    </div>
+
+    @if(sportIds.length >0){
+    <div formArrayName="sportIds">
+      @for(sport of sports; track sport.id){
+      <input type="checkbox" [formControlName]="$index" [value]="sport.id" />
+      {{ sport.name }}
+      }
+    </div>
+    }
+    <div>
+      <label for="cover_image">Cover Image</label>
+      <input type="file" (change)="onFileSelected($event)" id="cover_image" />
+    </div>
+    <button type="submit">Create Event</button>
+  </form>
+</div>

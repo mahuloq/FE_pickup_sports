@@ -1,0 +1,24 @@
+<div class="event-detail-container">
+  <div class="event-image">
+    <img [src]="event.cover_image_url || ''" alt="" />
+  </div>
+  <h2 class="event-title">{{ event.title }}</h2>
+  <p class="event-content">{{ event.content }}</p>
+  <div class="event-info">
+    <span class="event-dates">
+      {{ event.start_date_time | date : "medium" }} -
+      {{ event.end_date_time | date : "medium" }}
+    </span>
+    <div class="event-creator">
+      created by: <strong>{{ event.user.username }}</strong>
+    </div>
+  </div>
+  <div class="sports-container">
+    <h3>Sports:</h3>
+    <ul>
+      @for(sport of event.sports; track sport.id){
+      <li>{{ sport.name }}</li>
+      }
+    </ul>
+  </div>
+</div>
