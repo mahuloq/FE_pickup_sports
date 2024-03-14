@@ -8,8 +8,11 @@ export class Event {
   start_date_time: string;
   end_date_time: string;
   created_at: string;
+  guests: number;
+  has_joined: boolean;
+  participants: User[];
   cover_image_url: string;
-  user: User;
+  creator: User;
   sports: Sport[];
 
   constructor(event: any) {
@@ -21,6 +24,9 @@ export class Event {
     this.cover_image_url = event.cover_image_url;
     this.created_at = event.created_at;
     this.sports = event.sports;
-    this.user = event.user || new User({});
+    this.creator = event.creator || new User({});
+    this.guests = event.guests || 0;
+    this.has_joined = event.has_joined || false;
+    this.participants = event.participants || [];
   }
 }

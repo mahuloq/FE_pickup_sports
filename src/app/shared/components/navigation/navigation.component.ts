@@ -21,7 +21,7 @@ export class NavigationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userService.currentUserehaviorSubject.subscribe((user) => {
+    this.userService.currentUserbehaviorSubject.subscribe((user) => {
       this.currentUser = user;
     });
   }
